@@ -7,7 +7,7 @@
   "scripts": {
     "test": "node test",
     "start": "node src/index.js",
-    "lint": "npx eslint src/."
+    "lint": "npx eslint src/**"
   },
   "author": "Nicholas Chitty",
   "license": "MIT",

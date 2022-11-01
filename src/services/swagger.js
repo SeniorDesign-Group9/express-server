@@ -1,7 +1,7 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import yaml from 'js-yaml';
 import fs from 'fs';
-import logger from '../globals';
+import logger from '../globals.js';
 
 const swaggerSpecs = () => {
   let schemas;

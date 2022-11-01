@@ -1,16 +1,20 @@
 {
     "env": {
         "browser": true,
+        "node": true,
         "es2021": true
     },
     "extends": [
         "airbnb-base"
     ],
     "parserOptions": {
-        "ecmaVersion": 2021,
+        "ecmaVersion": "latest",
+        "project": "./jsconfig.json",
         "sourceType": "module"
     },
     "rules": {
-        "no-bitwise": "off"
+        "no-bitwise": "off",
+        "import/extensions": [0, "never"],
+        "linebreak-style": "error"
     }
 }

@@ -3,8 +3,8 @@ import dotenv from 'dotenv';
 import { createServer } from 'http';
 import swaggerUi from 'swagger-ui-express';
 import cors from 'cors';
-import router from '../routes';
-import swaggerSpecs from './swagger';
+import router from '../routes/index.js';
+import swaggerSpecs from './swagger.js';
 
 const app = express();
 
@@ -15,7 +15,7 @@ async function initWebServer() {
 
   // TODO connect to db
 
-  // Enable cross origin
+  // Enable cross-origin
   app.use(
     cors(),
     express.json(),
