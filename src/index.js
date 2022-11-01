@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import initWebServer from './services/webServer';
+import initWebServer from './services/webServer.js';
 
 (async function main() {
   // Load environment variables
