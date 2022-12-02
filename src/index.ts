@@ -1,7 +1,7 @@
-import initWebServer from './services/webServer';
+import net from 'net';
 
-(async function main() {
-  const httpServer = await initWebServer();
+const socketServer = net.createServer(socket => {
+    socket.end("Hello world!");
+})
 
-  httpServer.listen(process.env.PORT || 5000);
-}());
+socketServer.listen(5909);

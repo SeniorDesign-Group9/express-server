@@ -1,6 +1,4 @@
-/node_modules
-/.idea
+.idea
 .DS_Store
-modules.xml
-*.iml
-vcs.xml
+node_modules
+dest
