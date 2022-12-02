@@ -1,14 +1,8 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import { createServer } from 'http';
-import swaggerUi from 'swagger-ui-express';
-import cors from 'cors';
 import router from '../routes/index.js';
-import swaggerSpecs from './swagger.js';
 
 const app = express();
-
-dotenv.config();
 
 async function initWebServer() {
   const httpServer = createServer(app);
@@ -17,7 +11,6 @@ async function initWebServer() {
 
   // Enable cross-origin
   app.use(
-    cors(),
     express.json(),
     router,
   );
@@ -25,12 +18,11 @@ async function initWebServer() {
   // Enable swagger
   app.use(
     '/',
-    swaggerUi.serve,
   );
 
+  // serve swagger ui
   app.get(
     '/',
-    swaggerUi.setup(swaggerSpecs(), { explorer: true }),
   );
 
   return httpServer;
