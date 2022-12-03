@@ -1,8 +1,13 @@
-import net from 'net';
+import { createServer } from 'net';
+import logger from './globals.js';
 
-const socketServer = net.createServer(socket => {
-    console.log(socket.address());
-    socket.end("Hello world!");
-})
+const socketServer = createServer((socket) => {
+  // 'connection' listener.
+  logger.info('client connected');
+  socket.on('end', () => {
+    console.log('client disconnected');
+  });
+  socket.write('hello\r\n');
+});
 
 socketServer.listen(5909);
