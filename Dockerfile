@@ -15,4 +15,4 @@ COPY . ./
 
 EXPOSE 5000
 EXPOSE 5909
-CMD node run start
+CMD ["npm", "run", "start"]
